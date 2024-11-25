@@ -484,7 +484,7 @@
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
+                <span class="sr-only">Yuklanmoqda...</span>
             </div>
         </div>
         <!-- Spinner End -->
@@ -493,7 +493,7 @@
         <!-- Navbar Start -->
                 <div class="container-fluid nav-bar bg-transparent">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-                <a href="#s" class="navbar-brand d-flex align-items-center text-center">
+                <a href="{% url 'home_uz' %}" class="navbar-brand d-flex align-items-center text-center">
                                         <div class=" p-2 me-2">
                         <img class="img-fluid" src="https://inmacom.uz/assets/img/logo.png" alt="Icon" style="width: 180px; height: 50px;">
                         
@@ -505,18 +505,27 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="#s" class="nav-item nav-link active">Главная</a>
-                        <a href="#haqida" class="nav-item nav-link">О ПРОЕКТЕ</a>
-                        <a href="#paket" class="nav-item nav-link">РАБОЧИЕ ПАКЕТЫ</a>
-                        <a href="#hamkor" class="nav-item nav-link">ПАРТНЕРЫ</a>
+                        <a href="#s" class="nav-item nav-link active">Asosiy</a>
+                        <a href="#haqida" class="nav-item nav-link">LOYIHA HAQIDA</a>
+                        <a href="#paket" class="nav-item nav-link">ISH PAKETLARI</a>
+                        <a href="#hamkor" class="nav-item nav-link">HAMKORLAR</a>
                         
                         
-                        <a href="#footer" class="nav-item nav-link">Контакт</a>
+                        <a href="#footer" class="nav-item nav-link">Aloqa</a>
               
                     </div>
                    
                 </div>
-                <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center text-center">
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">UZ</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="{% url 'home_ru' %}" class="dropdown-item">RU</a>
+                        <a href="{% url 'home_en' %}" class="dropdown-item">EN</a>
+                        
+                    </div>
+                </div>  
+                <a href="{% url 'home_uz' %}" class="navbar-brand d-flex align-items-center text-center">
                                         <div class=" p-2 me-2">
                         <img class="img-fluid" src="https://inmacom.uz/assets/img/LogoErasmus_h.jpg" alt="Icon" style="width: 180px; height: 50px;">
                         
@@ -540,9 +549,7 @@
         <div id="s" class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
-                    <h3 class="animated  mb-4" style="text-align: center;">И ОПТИЧЕСКОЙ СВЯЗИ ДЛЯ ОБЕСПЕЧЕНИЯ ПОТРЕБНОСТЕЙ РЫНКА ТРУДА В СФЕРЕ ТЕЛЕКОММУНИКАЦИЙ В УЗБЕКИСТАНЕ» — INMACOM</h3>
-                    
-                    
+                    <h3 class="animated mb-4" style="text-align: center;">VA O'ZBEKISTONDA TELEKOMUNIKATSIYA SOHASIDAGI MEHNAT BOZORI TALABLARINI QO'NATIRISH UCHUN OPTIK ALOQALAR" — INMACOM</h3>                    
                 </div>
                 <div class="col-md-6 animated fadeIn">
                     <div class="owl-carousel header-carousel">
@@ -588,25 +595,19 @@
                             <img class="img-fluid w-100" src="https://i.ibb.co/2gvhNNC/photo-2024-05-18-08-59-26.jpg" alt="ubtuit">
                         </div>
                     </div>
-                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <h1 class="mb-4">О ПРОЕКТЕ</h1>
-                        <p >Проект INMACOM ERASMUS+ полностью соответствует региональным приоритетам, установленным CBHE, и национальной стратегии развития Узбекистана по разработке новой, востребованной, инновационной учебной программы по фотонике и оптической связи. Он также направлен на расширение сотрудничества с промышленностью для улучшения рынка труда и международного сотрудничества.</p>
-
-                        <p class="mb-4">  Проект направлен на достижение следующих конкретных целей, которые непосредственно направлены на решение перечисленных ниже проблем: </p>
-                        <p><i class="fa fa-check text-primary me-3"></i> 1. Разработка новой магистерской программы по фотонике и оптической связи в 4 университетах Узбекистана; </p>
-                        <p><i class="fa fa-check text-primary me-3"></i> 2. Повышение потенциала 4 университетов Узбекистана в области образования в области фотоники и оптической связи;</p>
-                        <p><i class="fa fa-check text-primary me-3"></i> 3. Создание современных лабораторий фотоники и оптической связи в 4 высших учебных заведениях Узбекистана;  </p>
-                        <p><i class="fa fa-check text-primary me-3"></i> 4. Начать пилотирование и внедрение совместных модулей/курсов в последний год проекта;  </p>
-                        <p><i class="fa fa-check text-primary me-3"></i> 5. Укрепление сотрудничества университетов и промышленности для удовлетворения потребностей рынка труда.    </p>
-                        
-                         
-                         
-                    </div>
-                    <br>
-                    <p>Более широкой целью проекта является создание инфраструктуры и системы для обучения следующего поколения инженеров в области фотоники и оптической связи. Эти инженеры могут решать местные и региональные проблемы ИКТ учреждений государственного управления, промышленности и частных потребителей в Узбекистане.
-
-</p>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="mb-4">LOYIHA HAQIDA</h1>
+                    <p >INMACOM ERASMUS+ loyihasi CBHE tomonidan belgilab berilgan mintaqaviy ustuvorliklarga va fotonika va optik aloqalar bo‘yicha yangi, talab yuqori, innovatsion o‘quv dasturini ishlab chiqish bo‘yicha O‘zbekistonning milliy rivojlanish strategiyasiga to‘liq mos keladi. Shuningdek, u mehnat bozori va xalqaro hamkorlikni yaxshilash uchun sanoat bilan hamkorlikni kengaytirishga qaratilgan.</p>
+                    
+                    <p class="mb-4"> Loyiha quyidagi aniq maqsadlarga erishishga qaratilgan bo'lib, ular bevosita quyida sanab o'tilgan muammolarni hal qiladi: </p>
+                    <p><i class="fa fa-check text-primary me-3"></i> 1. O'zbekistonning 4 ta universitetida fotonika va optik aloqa bo'yicha yangi magistratura dasturini ishlab chiqish; </p>
+                    <p><i class="fa fa-check text-primary me-3"></i> 2. O'zbekistondagi 4 ta universitetning fotonika va optik aloqa bo'yicha ta'lim olish imkoniyatlarini oshirish;</p>
+                    <p><i class="fa fa-check text-primary me-3"></i> 3. O‘zbekistondagi 4 ta oliy ta’lim muassasasida zamonaviy fotonika va optik aloqa laboratoriyalarini tashkil etish;</p>
+                    <p><i class="fa fa-check text-primary me-3"></i> 4. Loyihaning yakuniy yilida qo'shma modul/kurslarni sinovdan o'tkazish va amalga oshirishni boshlang;</p>
+                    <p><i class="fa fa-check text-primary me-3"></i> 5. Mehnat bozori ehtiyojlarini qondirish uchun universitet va sanoat hamkorligini kuchaytirish.</p>                
                 </div>
+                <br>
+                <p>Loyihaning kengroq maqsadi - fotonika va optik aloqa bo'yicha muhandislarning keyingi avlodini o'qitish uchun infratuzilma va tizimni yaratish. Bu muhandislar O‘zbekistondagi davlat idoralari, sanoat va xususiy iste’molchilarning mahalliy va mintaqaviy AKT muammolarini hal qila oladi.</p>                </div>
                 <br>
                  
             </div>
@@ -620,7 +621,7 @@
                 <div class="row g-0 gx-5 align-items-end">
                     <div class="col-lg-12">
                         <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                            <h1 class="mb-3">РАБОЧИЕ ПАКЕТЫ</h1>                             
+                            <h1 class="mb-3">ISH PAKETLARI</h1>
                         </div>
                     </div>                     
                 </div>
@@ -634,15 +635,15 @@
                                 <div class="property-item rounded overflow-hidden">
                                     
                                     <div class="p-4 pb-0">
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP1.</b>  Управление проектом. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP2.</b>   Детальное изучение доступных курсов по профильным инженерным программам в ТАТУ, УзМУ, СГУ, ОФТУИТ и других технических вузах Узбекистана. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP3.</b> ПОВЫШЕНИЕ ПРОИЗВОДИТЕЛЬНОСТИ. Планируются интенсивные курсы повышения квалификации для узбекских учителей. Курсы обучения проводятся по-разному.   </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP4.</b> Разработка 8 новых магистерских и 4 технических факультативных курсов (90 ECTS) и требований к магистерской диссертации.   </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP5.</b> Организация лабораторий фотоники и оптической связи в ТАТУ, УзМУ, СГУ и УБТУИТ.    </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP6.</b> ИСПОЛЬЗОВАНИЕ. Признание и аккредитация 8 новых магистерских курсов.  </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP7.</b>  Курсы подготовки инженеров различных специальностей организуются в созданных лабораториях исходя из текущих потребностей отрасли. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP8.</b>  КОНТРОЛЬ КАЧЕСТВА. Группа контроля качества (QCT) будет сформирована из академического персонала университетов-партнеров для мониторинга качества преподавания и содержания курсов.   </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP9.</b>   Влияние и распространение.  </p>
+                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP1.</b> Loyiha boshqaruvi. </p>
+                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP2.</b> TATU, O'zMU, SDU, OFTUITdagi ixtisoslashtirilgan muhandislik dasturlari bo'yicha mavjud kurslarni batafsil o'rganish. va O‘zbekistonning boshqa texnika oliy o‘quv yurtlari. </p>
+                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP3.</b> UNDORLIKNI ORGANISH. O‘zbekistonlik o‘qituvchilar uchun intensiv malaka oshirish kurslari rejalashtirilgan. O'quv kurslari turli yo'llar bilan o'tkaziladi. </p>
+                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP4.</b> 8 ta yangi magistratura va 4 ta texnik tanlov kurslarini (90 AKTS) ishlab chiqish va talablar magistrlik dissertatsiyasi. </p>
+                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP5.</b> TATU, O'zMU, SDU va UBTUITda fotonika va optik aloqa laboratoriyalarini tashkil etish. </p>
+                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP6.</b> FOYDALANISH. 8 ta yangi magistratura kurslarining tan olinishi va akkreditatsiyasi. </p>
+                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP7.</b> Tashkil etilgan laboratoriyalarda turli ixtisoslikdagi muhandislarni tayyorlash kurslari joriy standartlar asosida tashkil etiladi. sanoat ehtiyojlari. </p>
+                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP8.</b> SIFATNI NAZORAT. O'qitish sifati va kurs mazmunini nazorat qilish uchun hamkor universitetlarning professor-o'qituvchilaridan Sifatni nazorat qilish guruhi (QCT) tuziladi. </p>
+                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP9.</b> Ta'sir va tarqatish. </p>
                                     </div>
                                     <br>
                                 </div>
@@ -659,7 +660,7 @@
         <div class="container-xxl py-5" id="hamkor">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">ПАРТНЕРЫ</h1>
+                    <h1 class="mb-3">PARTNERS</h1>
                      
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
@@ -673,7 +674,7 @@
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">Ташкентский университет информационных технологий имени Мухаммада аль-Хорезми</h6>
+                                            <h6 class="fw-bold mb-1">Muhammad al-Xorazmiy nomidagi Toshkent axborot texnologiyalari universiteti</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -691,7 +692,7 @@
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">ГЕНТСКИЙ УНИВЕРСИТЕТ</h6>
+                                            <h6 class="fw-bold mb-1">GENT UNIVERSITETI</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -708,7 +709,7 @@
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">БРЮССЕЛЬСКИЙ УНИВЕРСИТЕТ VRIJE</h6>
+                                            <h6 class="fw-bold mb-1">BRUSSELS VRIJE UNIVERSITETI</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -725,7 +726,7 @@
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">ПОЛИТЕХНИЧЕСКИЙ УНИВЕРСИТЕТ ТУРИНА</h6>
+                                            <h6 class="fw-bold mb-1">TURIN POLITEXNIKA UNIVERSITETI</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -744,7 +745,7 @@
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">САМАРКАНДСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ ШАРОФА РАШИДОВА</h6>
+                                            <h6 class="fw-bold mb-1">SHAROF RASHIDOV NOMIDAGI SAMARQAND DAVLAT UNIVERSITETI</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -762,8 +763,8 @@
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">Ргенчский филиал Ташкентского университета информационных технологий имени Мухаммада аль-Хорезми</h6>
-                                        </div>
+                                            <h6 class="fw-bold mb-1">Muhammad al-Xorazmiy nomidagi Toshkent axborot texnologiyalari universiteti Urganch filiali</h6> 
+                                        </div>                                    
                                     </div>
                                 </div>
                             </div>
@@ -780,8 +781,7 @@
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">МИНИСТЕРСТВО ВЫСШЕГО ОБРАЗОВАНИЯ, НАУКИ И ИННОВАЦИЙ РЕСПУБЛИКИ УЗБЕКИСТАН</h6>
-                                            
+                                            <h6 class="fw-bold mb-1">O'ZBEKISTON RESPUBLIKASI OLIY TA'LIM, FAN VA INNOVATSIYALAR VAZIRLIGI</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -799,8 +799,7 @@
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">МИР СОЛАР</h6>
-                                            
+                                            <h6 class="fw-bold mb-1">QUYOSH DUNYOSI</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -819,28 +818,26 @@
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">Хорезмский филиал АО «УЗБЕКТЕЛЕКОМ»</h6>
-                                            
-                                        </div>
+                                            <h6 class="fw-bold mb-1">O'ZBEKTELECOM AK Xorazm filiali</h6>
+                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
 
-                    <div class="testimonial-item bg-light rounded p-3">
+                    <div class="testimonial-item bg-light rounded p-3"> 
                         <div class="bg-white border rounded p-4">
                             <div class="row">
                                 <div class="col-md-3">
                                     <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h10.png"
-                                         style="width: 100px; height: 100px;" alt="ubtuit">
+                                     style="width: 100px; height: 100px;" alt="ubtuit">
                                 </div>
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">МИРЗО УЛУГБЕКСКИЙ НАЦИОНАЛЬНЫЙ УНИВЕРСИТЕТ УЗБЕКИСТАНА</h6>
-                                            
+                                            <h6 class="fw-bold mb-1 ">MIRZO ULUG'BEK NOMIDAGI O'ZBEKISTON MILLIY UNIVERSITETI</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -863,21 +860,19 @@
             <div class="container py-5" >
                 <div class="row g-5">
                     <div class="col-lg-4 col-md-6">
-                        <h5 class="text-white mb-4">Контакт</h5>
+                        <h5 class="text-white mb-4">Aloqa</h5>
                         <p class="mb-2">E-mail:            inmacomofficial@gmail.com</p>
                         <p class="mb-2">Instagram:     inmacom.official@instagram</p>
-                        <p class="mb-2">Telegramm:        https://t.me/inmacom</p>
+                        <p class="mb-2">Telegram:        https://t.me/inmacom</p>
                         <p class="mb-2">Facebook:        inmacom.official@facebook</p>
                          
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <h5 class="text-white mb-4">Быстрые ссылки</h5>
-                        <a class="btn btn-link text-white-50" href="#haqida">Главная
-</a>
-                        <a class="btn btn-link text-white-50" href="#haqida">О ПРОЕКТЕ</a>
-                        <a class="btn btn-link text-white-50" href="#paket">РАБОЧИЕ ПАКЕТЫ</a>
-                        <a class="btn btn-link text-white-50" href="#hamkor">ПАРТНЕРЫ</a>
-                        
+                        <h5 class="text-white mb-4">Tezkor havolalar</h5>
+                         <a class="btn btn-link text-white-50" href="">Asosiy</a>
+                         <a class="btn btn-link text-white-50" href="#haqida">LOYIHA HAQIDA</a>
+                         <a class="btn btn-link text-white-50" href="#paket">ISH PAKETLARI</a>
+                         <a class="btn btn-link text-white-50" href="#hamkor">HAMKORLIKLAR</a>
                     </div>
                    
                     
