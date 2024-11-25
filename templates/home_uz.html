@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-{% load static %}
+<html lang="uz">
+
 <head>
     <meta charset="utf-8">
-    <title>Inmacom</title>
+    <title>QUARTZ</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="И ОПТИЧЕСКОЙ СВЯЗИ ДЛЯ ОБЕСПЕЧЕНИЯ ПОТРЕБНОСТЕЙ РЫНКА ТРУДА В СФЕРЕ ТЕЛЕКОММУНИКАЦИЙ В УЗБЕКИСТАНЕ» — INMACOM" name="description">
+    <meta content="ЎЗБЕКИСТОНДА ТЕЛЕКОММУНИКАЦИЯ СОҲАСИДА ИШ ЎРИНЛАРИ ТАЛАБИГА ЖАВОБ БЕРИШ УЧУН ФОТОНИКА ВА ОПТИКАЛИК БАҒЛАНИШ БОЙИЧА ИШЛАНМА" name="description">
 
     <!-- Favicon -->
-{#    <link href="{% static 'img/favicon.ico' %}" rel="icon">#}
+    <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,456 +27,454 @@
     <link href="https://inmacom.samdu.uz/ru/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-{#     <link rel="stylesheet" href="{% static 'style.css' %}">#}
-    <style>
-        /********** Template CSS **********/
-:root {
-    --primary: #00B98E;
-    --secondary: #FF6922;
-    --light: #EFFDF5;
-    --dark: #0E2E50;
-}
-
-.back-to-top {
-    position: fixed;
-    display: none;
-    right: 45px;
-    bottom: 45px;
-    z-index: 99;
-}
-
-
-/*** Spinner ***/
-#spinner {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
-    z-index: 99999;
-}
-
-#spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
-    visibility: visible;
-    opacity: 1;
-}
-
-
-/*** Button ***/
-.btn {
-    transition: .5s;
-}
-
-.btn.btn-primary,
-.btn.btn-secondary {
-    color: #FFFFFF;
-}
-
-.btn-square {
-    width: 38px;
-    height: 38px;
-}
-
-.btn-sm-square {
-    width: 32px;
-    height: 32px;
-}
-
-.btn-lg-square {
-    width: 48px;
-    height: 48px;
-}
-
-.btn-square,
-.btn-sm-square,
-.btn-lg-square {
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: normal;
-    border-radius: 50px;
-}
-
-
-/*** Navbar ***/
-.nav-bar {
-    position: relative;
-    margin-top: 45px;
-    padding: 0 3rem;
-    transition: .5s;
-    z-index: 9999;
-}
-
-.nav-bar.sticky-top {
-    position: sticky;
-    padding: 0;
-    z-index: 9999;
-}
-
-.navbar {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-}
-
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 5px;
-    transition: .5s;
-}
-
-.navbar .dropdown-toggle[aria-expanded=true]::after {
-    transform: rotate(-180deg);
-}
-
-.navbar-light .navbar-nav .nav-link {
-    margin-right: 15px;
-    padding: 25px 0;
-    color: #FFFFFF;
-    font-size: 15px;
-    text-transform: uppercase;
-    outline: none;
-}
-
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary);
-}
-
-@media (max-width: 991.98px) {
-    .nav-bar {
-        margin: 0;
-        padding: 0;
-    }
-
-    .navbar-light .navbar-nav .nav-link  {
-        margin-right: 0;
-        padding: 10px 0;
-    }
-
-    .navbar-light .navbar-nav {
-        border-top: 1px solid #EEEEEE;
-    }
-}
-
-.navbar-light .navbar-brand {
-    height: 75px;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: var(--dark);
-    font-weight: 500;
-}
-
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        top: 100%;
-        margin-top: 0;
-        transform: rotateX(-75deg);
-        transform-origin: 0% 0%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
+     <link rel="stylesheet" href="style.css">
+     <style>/********** Template CSS **********/
+        :root {
+            --primary: #00B98E;
+            --secondary: #FF6922;
+            --light: #EFFDF5;
+            --dark: #0E2E50;
+        }
         
-    }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        transform: rotateX(0deg);
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
-    }
-}
-
-
-/*** Header ***/
-@media (min-width: 992px) {
-    .header {
-        margin-top: -120px;
-    }
-}
-
-.header-carousel .owl-nav {
-    position: absolute;
-    top: 50%;
-    left: -25px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-}
-
-.header-carousel .owl-nav .owl-prev,
-.header-carousel .owl-nav .owl-next {
-    margin: 7px 0;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    background: var(--primary);
-    border-radius: 40px;
-    font-size: 20px;
-    transition: .5s;
-}
-
-.header-carousel .owl-nav .owl-prev:hover,
-.header-carousel .owl-nav .owl-next:hover {
-    background: var(--dark);
-}
-
-@media (max-width: 768px) {
-    .header-carousel .owl-nav {
-        left: 25px;
-    }
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-    color: #DDDDDD;
-}
-
-
-/*** Icon ***/
-.icon {
-    padding: 15px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #FFFFFF !important;
-    border-radius: 50px;
-    border: 1px dashed var(--primary) !important;
-}
-
-
-/*** About ***/
-.about-img img {
-    position: relative;
-    z-index: 2;
-}
-
-.about-img::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    background: var(--primary);
-    transform: skew(20deg);
-    z-index: 1;
-}
-
-
-/*** Category ***/
-.cat-item div {
-    background: #FFFFFF;
-    border: 1px dashed rgba(0, 185, 142, .3);
-    transition: .5s;
-}
-
-.cat-item:hover div {
-    background: var(--primary);
-    border-color: transparent;
-}
-
-.cat-item div * {
-    transition: .5s;
-}
-
-.cat-item:hover div * {
-    color: #FFFFFF !important;
-}
-
-
-/*** Property List ***/
-.nav-pills .nav-item .btn {
-    color: var(--dark);
-}
-
-.nav-pills .nav-item .btn:hover,
-.nav-pills .nav-item .btn.active {
-    color: #FFFFFF;
-}
-
-.property-item {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-}
-
-.property-item img {
-    transition: .5s;
-}
-
-.property-item:hover img {
-    transform: scale(1.1);
-}
-
-.property-item .border-top {
-    border-top: 1px dashed rgba(0, 185, 142, .3) !important;
-}
-
-.property-item .border-end {
-    border-right: 1px dashed rgba(0, 185, 142, .3) !important;
-}
-
-
-/*** Team ***/
-.team-item {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-    transition: .5s;
-}
-
-.team-item .btn {
-    color: var(--primary);
-    background: #FFFFFF;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .15);
-}
-
-.team-item .btn:hover {
-    color: #FFFFFF;
-    background: var(--primary);
-}
-
-.team-item:hover {
-    border-color: var(--secondary) !important;
-}
-
-.team-item:hover .bg-primary {
-    background: var(--secondary) !important;
-}
-
-.team-item:hover .bg-primary i {
-    color: var(--secondary) !important;
-}
-
-
-/*** Testimonial ***/
-.testimonial-carousel {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-
-@media (min-width: 576px) {
-    .testimonial-carousel {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
-}
-
-.testimonial-carousel .testimonial-item .border {
-    border: 1px dashed rgba(0, 185, 142, .3) !important;
-}
-
-.testimonial-carousel .owl-nav {
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    top: calc(50% - 20px);
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    z-index: 1;
-}
-
-.testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    background: var(--primary);
-    border-radius: 40px;
-    font-size: 20px;
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-nav .owl-prev:hover,
-.testimonial-carousel .owl-nav .owl-next:hover {
-    background: var(--dark);
-}
-
-
-/*** Footer ***/
-.footer .btn.btn-social {
-    margin-right: 5px;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--light);
-    border: 1px solid rgba(255,255,255,0.5);
-    border-radius: 35px;
-    transition: .3s;
-}
-
-.footer .btn.btn-social:hover {
-    color: var(--primary);
-    border-color: var(--light);
-}
-
-.footer .btn.btn-link {
-    display: block;
-    margin-bottom: 5px;
-    padding: 0;
-    text-align: left;
-    font-size: 15px;
-    font-weight: normal;
-    text-transform: capitalize;
-    transition: .3s;
-}
-
-.footer .btn.btn-link::before {
-    position: relative;
-    content: "\f105";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 10px;
-}
-
-.footer .btn.btn-link:hover {
-    letter-spacing: 1px;
-    box-shadow: none;
-}
-
-.footer .form-control {
-    border-color: rgba(255,255,255,0.5);
-}
-
-.footer .copyright {
-    padding: 25px 0;
-    font-size: 15px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
-}
-
-.footer .copyright a {
-    color: var(--light);
-}
-
-.footer .footer-menu a {
-    margin-right: 15px;
-    padding-right: 15px;
-    border-right: 1px solid rgba(255, 255, 255, .1);
-}
-
-.footer .footer-menu a:last-child {
-    margin-right: 0;
-    padding-right: 0;
-    border-right: none;
-}
-.bg-primary, .owl-nav .owl-next,.bg-dark, .testimonial-carousel .owl-nav .owl-prev, .testimonial-carousel .owl-nav .owl-next, .about-img::before, .btn-primary, .header-carousel .owl-nav .owl-prev{
-    background-color: #0e1133 !important;
-     border: none !important;
-}
-.text-primary, .navbar-light .navbar-nav .nav-link:hover,.navbar-light .navbar-nav .nav-link.active{
-    color: #0e1133 !important;
-}
-    </style>
+        .back-to-top {
+            position: fixed;
+            display: none;
+            right: 45px;
+            bottom: 45px;
+            z-index: 99;
+        }
+        
+        
+        /*** Spinner ***/
+        #spinner {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .5s ease-out, visibility 0s linear .5s;
+            z-index: 99999;
+        }
+        
+        #spinner.show {
+            transition: opacity .5s ease-out, visibility 0s linear 0s;
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        
+        /*** Button ***/
+        .btn {
+            transition: .5s;
+        }
+        
+        .btn.btn-primary,
+        .btn.btn-secondary {
+            color: #FFFFFF;
+        }
+        
+        .btn-square {
+            width: 38px;
+            height: 38px;
+        }
+        
+        .btn-sm-square {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .btn-lg-square {
+            width: 48px;
+            height: 48px;
+        }
+        
+        .btn-square,
+        .btn-sm-square,
+        .btn-lg-square {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: normal;
+            border-radius: 50px;
+        }
+        
+        
+        /*** Navbar ***/
+        .nav-bar {
+            position: relative;
+            margin-top: 45px;
+            padding: 0 3rem;
+            transition: .5s;
+            z-index: 9999;
+        }
+        
+        .nav-bar.sticky-top {
+            position: sticky;
+            padding: 0;
+            z-index: 9999;
+        }
+        
+        .navbar {
+            box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+        }
+        
+        .navbar .dropdown-toggle::after {
+            border: none;
+            content: "\f107";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            vertical-align: middle;
+            margin-left: 5px;
+            transition: .5s;
+        }
+        
+        .navbar .dropdown-toggle[aria-expanded=true]::after {
+            transform: rotate(-180deg);
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            margin-right: 15px;
+            padding: 25px 0;
+            color: #FFFFFF;
+            font-size: 15px;
+            text-transform: uppercase;
+            outline: none;
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 991.98px) {
+            .nav-bar {
+                margin: 0;
+                padding: 0;
+            }
+        
+            .navbar-light .navbar-nav .nav-link  {
+                margin-right: 0;
+                padding: 10px 0;
+            }
+        
+            .navbar-light .navbar-nav {
+                border-top: 1px solid #EEEEEE;
+            }
+        }
+        
+        .navbar-light .navbar-brand {
+            height: 75px;
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        @media (min-width: 992px) {
+            .navbar .nav-item .dropdown-menu {
+                display: block;
+                top: 100%;
+                margin-top: 0;
+                transform: rotateX(-75deg);
+                transform-origin: 0% 0%;
+                opacity: 0;
+                visibility: hidden;
+                transition: .5s;
+                
+            }
+        
+            .navbar .nav-item:hover .dropdown-menu {
+                transform: rotateX(0deg);
+                visibility: visible;
+                transition: .5s;
+                opacity: 1;
+            }
+        }
+        
+        
+        /*** Header ***/
+        @media (min-width: 992px) {
+            .header {
+                margin-top: -120px;
+            }
+        }
+        
+        .header-carousel .owl-nav {
+            position: absolute;
+            top: 50%;
+            left: -25px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header-carousel .owl-nav .owl-prev,
+        .header-carousel .owl-nav .owl-next {
+            margin: 7px 0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            background: var(--primary);
+            border-radius: 40px;
+            font-size: 20px;
+            transition: .5s;
+        }
+        
+        .header-carousel .owl-nav .owl-prev:hover,
+        .header-carousel .owl-nav .owl-next:hover {
+            background: var(--dark);
+        }
+        
+        @media (max-width: 768px) {
+            .header-carousel .owl-nav {
+                left: 25px;
+            }
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: #DDDDDD;
+        }
+        
+        
+        /*** Icon ***/
+        .icon {
+            padding: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFFFFF !important;
+            border-radius: 50px;
+            border: 1px dashed var(--primary) !important;
+        }
+        
+        
+        /*** About ***/
+        .about-img img {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-img::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            transform: skew(20deg);
+            z-index: 1;
+        }
+        
+        
+        /*** Category ***/
+        .cat-item div {
+            background: #FFFFFF;
+            border: 1px dashed rgba(0, 185, 142, .3);
+            transition: .5s;
+        }
+        
+        .cat-item:hover div {
+            background: var(--primary);
+            border-color: transparent;
+        }
+        
+        .cat-item div * {
+            transition: .5s;
+        }
+        
+        .cat-item:hover div * {
+            color: #FFFFFF !important;
+        }
+        
+        
+        /*** Property List ***/
+        .nav-pills .nav-item .btn {
+            color: var(--dark);
+        }
+        
+        .nav-pills .nav-item .btn:hover,
+        .nav-pills .nav-item .btn.active {
+            color: #FFFFFF;
+        }
+        
+        .property-item {
+            box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+        }
+        
+        .property-item img {
+            transition: .5s;
+        }
+        
+        .property-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .property-item .border-top {
+            border-top: 1px dashed rgba(0, 185, 142, .3) !important;
+        }
+        
+        .property-item .border-end {
+            border-right: 1px dashed rgba(0, 185, 142, .3) !important;
+        }
+        
+        
+        /*** Team ***/
+        .team-item {
+            box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+            transition: .5s;
+        }
+        
+        .team-item .btn {
+            color: var(--primary);
+            background: #FFFFFF;
+            box-shadow: 0 0 30px rgba(0, 0, 0, .15);
+        }
+        
+        .team-item .btn:hover {
+            color: #FFFFFF;
+            background: var(--primary);
+        }
+        
+        .team-item:hover {
+            border-color: var(--secondary) !important;
+        }
+        
+        .team-item:hover .bg-primary {
+            background: var(--secondary) !important;
+        }
+        
+        .team-item:hover .bg-primary i {
+            color: var(--secondary) !important;
+        }
+        
+        
+        /*** Testimonial ***/
+        .testimonial-carousel {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        
+        @media (min-width: 576px) {
+            .testimonial-carousel {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
+        
+        .testimonial-carousel .testimonial-item .border {
+            border: 1px dashed rgba(0, 185, 142, .3) !important;
+        }
+        
+        .testimonial-carousel .owl-nav {
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            top: calc(50% - 20px);
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1;
+        }
+        
+        .testimonial-carousel .owl-nav .owl-prev,
+        .testimonial-carousel .owl-nav .owl-next {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            background: var(--primary);
+            border-radius: 40px;
+            font-size: 20px;
+            transition: .5s;
+        }
+        
+        .testimonial-carousel .owl-nav .owl-prev:hover,
+        .testimonial-carousel .owl-nav .owl-next:hover {
+            background: var(--dark);
+        }
+        
+        
+        /*** Footer ***/
+        .footer .btn.btn-social {
+            margin-right: 5px;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 35px;
+            transition: .3s;
+        }
+        
+        .footer .btn.btn-social:hover {
+            color: var(--primary);
+            border-color: var(--light);
+        }
+        
+        .footer .btn.btn-link {
+            display: block;
+            margin-bottom: 5px;
+            padding: 0;
+            text-align: left;
+            font-size: 15px;
+            font-weight: normal;
+            text-transform: capitalize;
+            transition: .3s;
+        }
+        
+        .footer .btn.btn-link::before {
+            position: relative;
+            content: "\f105";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 10px;
+        }
+        
+        .footer .btn.btn-link:hover {
+            letter-spacing: 1px;
+            box-shadow: none;
+        }
+        
+        .footer .form-control {
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .footer .copyright {
+            padding: 25px 0;
+            font-size: 15px;
+            border-top: 1px solid rgba(256, 256, 256, .1);
+        }
+        
+        .footer .copyright a {
+            color: var(--light);
+        }
+        
+        .footer .footer-menu a {
+            margin-right: 15px;
+            padding-right: 15px;
+            border-right: 1px solid rgba(255, 255, 255, .1);
+        }
+        
+        .footer .footer-menu a:last-child {
+            margin-right: 0;
+            padding-right: 0;
+            border-right: none;
+        }
+        .bg-primary, .owl-nav .owl-next,.bg-dark, .testimonial-carousel .owl-nav .owl-prev, .testimonial-carousel .owl-nav .owl-next, .about-img::before, .btn-primary, .header-carousel .owl-nav .owl-prev{
+            background-color: #0e1133 !important;
+             border: none !important;
+        }
+        .text-primary, .navbar-light .navbar-nav .nav-link:hover,.navbar-light .navbar-nav .nav-link.active{
+            color: #0e1133 !important;
+        }</style>
 </head>
 <body>
     <div class="container-xxl bg-white p-0">
@@ -489,53 +486,39 @@
         </div>
         <!-- Spinner End -->
 
-
         <!-- Navbar Start -->
                 <div class="container-fluid nav-bar bg-transparent">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-                <a href="{% url 'home_uz' %}" class="navbar-brand d-flex align-items-center text-center">
+                <a href="#s" class="navbar-brand d-flex align-items-center text-center">
                                         <div class=" p-2 me-2">
-                        <img class="img-fluid" src="https://inmacom.uz/assets/img/logo.png" alt="Icon" style="width: 180px; height: 50px;">
-                        
+                        <img class="img-fluid" src="https://quartzuz.uz/templates/English/images/logo.png" alt="Icon" style="width: 180px; height: 50px;">
                     </div>
-                    <!-- <h1 class="m-0 text-primary">Maymunjon</h1> -->
                 </a>
                                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="#s" class="nav-item nav-link active">Asosiy</a>
-                        <a href="#haqida" class="nav-item nav-link">LOYIHA HAQIDA</a>
-                        <a href="#paket" class="nav-item nav-link">ISH PAKETLARI</a>
-                        <a href="#hamkor" class="nav-item nav-link">HAMKORLAR</a>
-                        
-                        
+                        <a href="#s" class="nav-item nav-link active">Bosh sahifa</a>
+                        <a href="#haqida" class="nav-item nav-link">Loyihaning maqsadi</a>
+                        <a href="#hamkor" class="nav-item nav-link">Hamkorlar</a>
                         <a href="#footer" class="nav-item nav-link">Aloqa</a>
-              
                     </div>
-                   
                 </div>
-                
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">UZ</a>
                     <div class="dropdown-menu rounded-0 m-0">
                         <a href="{% url 'home_ru' %}" class="dropdown-item">RU</a>
                         <a href="{% url 'home_en' %}" class="dropdown-item">EN</a>
-                        
                     </div>
-                </div>  
+                </div>
                 <a href="{% url 'home_uz' %}" class="navbar-brand d-flex align-items-center text-center">
                                         <div class=" p-2 me-2">
-                        <img class="img-fluid" src="https://inmacom.uz/assets/img/LogoErasmus_h.jpg" alt="Icon" style="width: 180px; height: 50px;">
-                        
+                        <img class="img-fluid" src="https://quartzuz.uz/templates/English/images/logo.png" alt="Icon" style="width: 180px; height: 50px;">
                     </div>
-                    <!-- <h1 class="m-0 text-primary">Maymunjon</h1> -->
                 </a>
-
             </nav>
         </div>        <!-- Navbar End -->
-
 
         <!-- Header Start -->
         <br>
@@ -549,118 +532,56 @@
         <div id="s" class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
-                    <h3 class="animated mb-4" style="text-align: center;">VA O'ZBEKISTONDA TELEKOMUNIKATSIYA SOHASIDAGI MEHNAT BOZORI TALABLARINI QO'NATIRISH UCHUN OPTIK ALOQALAR" — INMACOM</h3>                    
+                    <h3 class="animated  mb-4" style="text-align: center;">Loyihaning kengroq maqsadi — O'zbekistondagi oliy ta'lim muassasalari va ish bozori o'rtasida sinergetik aloqalarni rivojlantirish</h3>
                 </div>
                 <div class="col-md-6 animated fadeIn">
                     <div class="owl-carousel header-carousel">
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="https://i.ibb.co/rtxZz18/18.jpg"  alt="">
+                            <img class="img-fluid" src="https://quartzuz.uz/uploads/posts/2024-06/2.jpg"  alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="https://i.ibb.co/THXqNn0/photo-2024-09-05-10-41-46.jpg"  alt="">
+                            <img class="img-fluid" src="https://quartzuz.uz/uploads/posts/2024-06/medium/a6277b4891_image_2024-06-25_20-28-45.jpg"  alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="https://i.ibb.co/rtxZz18/18.jpg" alt="">
+                            <img class="img-fluid" src="https://quartzuz.uz/uploads/posts/2024-08/medium/12121212.jpg" alt="">
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
         <!-- Header End -->
 
-        
-
-        <!-- Search Start -->
-        <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
-            <div class="container">
-                <div class="row g-2">
-                   
-                </div>
-            </div>
-        </div>
-        <!-- Search End -->
-
-
-       
-
-
         <!-- About Start -->
         <div class="container-xxl py-5" id="haqida">
             <div class="container">
                 <div class="row g-5 align-items-center">
-                    
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                         <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                            <img class="img-fluid w-100" src="https://i.ibb.co/2gvhNNC/photo-2024-05-18-08-59-26.jpg" alt="ubtuit">
+                            <img class="img-fluid w-100" src="https://quartzuz.uz/uploads/posts/2024-08/medium/21212121.jpg">
                         </div>
                     </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="mb-4">LOYIHA HAQIDA</h1>
-                    <p >INMACOM ERASMUS+ loyihasi CBHE tomonidan belgilab berilgan mintaqaviy ustuvorliklarga va fotonika va optik aloqalar bo‘yicha yangi, talab yuqori, innovatsion o‘quv dasturini ishlab chiqish bo‘yicha O‘zbekistonning milliy rivojlanish strategiyasiga to‘liq mos keladi. Shuningdek, u mehnat bozori va xalqaro hamkorlikni yaxshilash uchun sanoat bilan hamkorlikni kengaytirishga qaratilgan.</p>
-                    
-                    <p class="mb-4"> Loyiha quyidagi aniq maqsadlarga erishishga qaratilgan bo'lib, ular bevosita quyida sanab o'tilgan muammolarni hal qiladi: </p>
-                    <p><i class="fa fa-check text-primary me-3"></i> 1. O'zbekistonning 4 ta universitetida fotonika va optik aloqa bo'yicha yangi magistratura dasturini ishlab chiqish; </p>
-                    <p><i class="fa fa-check text-primary me-3"></i> 2. O'zbekistondagi 4 ta universitetning fotonika va optik aloqa bo'yicha ta'lim olish imkoniyatlarini oshirish;</p>
-                    <p><i class="fa fa-check text-primary me-3"></i> 3. O‘zbekistondagi 4 ta oliy ta’lim muassasasida zamonaviy fotonika va optik aloqa laboratoriyalarini tashkil etish;</p>
-                    <p><i class="fa fa-check text-primary me-3"></i> 4. Loyihaning yakuniy yilida qo'shma modul/kurslarni sinovdan o'tkazish va amalga oshirishni boshlang;</p>
-                    <p><i class="fa fa-check text-primary me-3"></i> 5. Mehnat bozori ehtiyojlarini qondirish uchun universitet va sanoat hamkorligini kuchaytirish.</p>                
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <h1 class="mb-4">LOYIHANING MAQSADI</h1>
+                        <p> Loyihaning kengroq maqsadi — O'zbekistondagi oliy ta'lim muassasalari va ish bozori o'rtasida sinergetik aloqalarni rivojlantirish va sifatni ta'minlash jarayonlarini ishlab chiqishdir. </p>
+                        <p class="mb-4">Loyihaning maqsadi sifatni ta'minlash, raqamli savodxonlikni oshirish va inson resurslari ko'nikmalarini rivojlantirishdir.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i> 1. — O'zbekistondagi ta'lim tizimidagi muammolarni aniqlash.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i> 2. — O'qituvchilar va boshqaruvchilarni raqamli ko'nikmalar bilan ta'minlash.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i> 3. — Ta'lim va sifatni ta'minlash uchun kerakli strategiyalarni ishlab chiqish.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i> 4. — Universitetni boshqarish va sifatni ta'minlash tizimini rivojlantirish.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i> 5. — Hamkorlikni rivojlantirish va tarmoqni shakllantirish.</p>
+                    </div>
                 </div>
-                <br>
-                <p>Loyihaning kengroq maqsadi - fotonika va optik aloqa bo'yicha muhandislarning keyingi avlodini o'qitish uchun infratuzilma va tizimni yaratish. Bu muhandislar O‘zbekistondagi davlat idoralari, sanoat va xususiy iste’molchilarning mahalliy va mintaqaviy AKT muammolarini hal qila oladi.</p>                </div>
-                <br>
-                 
             </div>
         </div>
         <!-- About End -->
 
 
-        <!-- Property List Start -->
-        <div class="container-xxl py-5" id="paket">
-            <div class="container">
-                <div class="row g-0 gx-5 align-items-end">
-                    <div class="col-lg-12">
-                        <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                            <h1 class="mb-3">ISH PAKETLARI</h1>
-                        </div>
-                    </div>                     
-                </div>
-                <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
-                        <div class="row g-4">
-
-                            
-
-                            <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    
-                                    <div class="p-4 pb-0">
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP1.</b> Loyiha boshqaruvi. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP2.</b> TATU, O'zMU, SDU, OFTUITdagi ixtisoslashtirilgan muhandislik dasturlari bo'yicha mavjud kurslarni batafsil o'rganish. va O‘zbekistonning boshqa texnika oliy o‘quv yurtlari. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP3.</b> UNDORLIKNI ORGANISH. O‘zbekistonlik o‘qituvchilar uchun intensiv malaka oshirish kurslari rejalashtirilgan. O'quv kurslari turli yo'llar bilan o'tkaziladi. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP4.</b> 8 ta yangi magistratura va 4 ta texnik tanlov kurslarini (90 AKTS) ishlab chiqish va talablar magistrlik dissertatsiyasi. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP5.</b> TATU, O'zMU, SDU va UBTUITda fotonika va optik aloqa laboratoriyalarini tashkil etish. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP6.</b> FOYDALANISH. 8 ta yangi magistratura kurslarining tan olinishi va akkreditatsiyasi. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP7.</b> Tashkil etilgan laboratoriyalarda turli ixtisoslikdagi muhandislarni tayyorlash kurslari joriy standartlar asosida tashkil etiladi. sanoat ehtiyojlari. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP8.</b> SIFATNI NAZORAT. O'qitish sifati va kurs mazmunini nazorat qilish uchun hamkor universitetlarning professor-o'qituvchilaridan Sifatni nazorat qilish guruhi (QCT) tuziladi. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP9.</b> Ta'sir va tarqatish. </p>
-                                    </div>
-                                    <br>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                   
-                </div>
-            </div>
-        </div>
         <!-- Property List End -->
 
         <div class="container-xxl py-5" id="hamkor">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">PARTNERS</h1>
+                    <h1 class="mb-3">HAMKORLAR</h1>
                      
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
@@ -669,12 +590,13 @@
                         <div class="bg-white border rounded p-4">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h1.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
+                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h1.jpg" style="width: 100px; height: 100px;">
                                 </div>
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">Muhammad al-Xorazmiy nomidagi Toshkent axborot texnologiyalari universiteti</h6>
+                                            <h6 class="fw-bold mb-1">Ташкентский университет информационных технологий имени Мухаммада аль-Хорезми</h6>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -687,46 +609,35 @@
                         <div class="bg-white border rounded p-4">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h2.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
+                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h2.jpg" style="width: 100px; height: 100px;">
                                 </div>
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">GENT UNIVERSITETI</h6>
+                                            <h6 class="fw-bold mb-1">ГЕНТСКИЙ УНИВЕРСИТЕТ</h6>
+                                            
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
+
+              
+
+             
 
                     <div class="testimonial-item bg-light rounded p-3">
                         <div class="bg-white border rounded p-4">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h3.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
+                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h6.jpg" style="width: 100px; height: 100px;">
                                 </div>
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">BRUSSELS VRIJE UNIVERSITETI</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h4.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="">
-                                        <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">TURIN POLITEXNIKA UNIVERSITETI</h6>
+                                            <h6 class="fw-bold mb-1">Ргенчский филиал Ташкентского университета информационных технологий имени Мухаммада аль-Хорезми</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -736,16 +647,18 @@
                     </div>
 
 
+
                     <div class="testimonial-item bg-light rounded p-3">
                         <div class="bg-white border rounded p-4">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h5.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
+                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h9.jpg" style="width: 100px; height: 100px;">
                                 </div>
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">SHAROF RASHIDOV NOMIDAGI SAMARQAND DAVLAT UNIVERSITETI</h6>
+                                            <h6 class="fw-bold mb-1">Хорезмский филиал АО «УЗБЕКТЕЛЕКОМ»</h6>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -754,97 +667,7 @@
                         </div>
                     </div>
 
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h6.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="">
-                                        <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">Muhammad al-Xorazmiy nomidagi Toshkent axborot texnologiyalari universiteti Urganch filiali</h6> 
-                                        </div>                                    
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h7.png" style="width: 100px; height: 100px;" alt="ubtuit">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="">
-                                        <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">O'ZBEKISTON RESPUBLIKASI OLIY TA'LIM, FAN VA INNOVATSIYALAR VAZIRLIGI</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h8.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="">
-                                        <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">QUYOSH DUNYOSI</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h9.jpg"
-                                         style="width: 100px; height: 100px;" alt="ubtuit">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="">
-                                        <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">O'ZBEKTELECOM AK Xorazm filiali</h6>
-                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item bg-light rounded p-3"> 
-                        <div class="bg-white border rounded p-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h10.png"
-                                     style="width: 100px; height: 100px;" alt="ubtuit">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="">
-                                        <div class="ps-3">
-                                            <h6 class="fw-bold mb-1 ">MIRZO ULUG'BEK NOMIDAGI O'ZBEKISTON MILLIY UNIVERSITETI</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
+                    
 
                      
                 </div>
@@ -861,18 +684,20 @@
                 <div class="row g-5">
                     <div class="col-lg-4 col-md-6">
                         <h5 class="text-white mb-4">Aloqa</h5>
-                        <p class="mb-2">E-mail:            inmacomofficial@gmail.com</p>
-                        <p class="mb-2">Instagram:     inmacom.official@instagram</p>
-                        <p class="mb-2">Telegram:        https://t.me/inmacom</p>
-                        <p class="mb-2">Facebook:        inmacom.official@facebook</p>
+                        <p class="mb-2">E-mail:           info@kiut.uz</p>
+                        <p class="mb-2">Instagram:     quartzuz.official@instagram</p>
+                        <p class="mb-2">Telegramm:        https://t.me/quartzuz</p>
+                        <p class="mb-2">Facebook:        quartzuz.official@facebook</p>
                          
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <h5 class="text-white mb-4">Tezkor havolalar</h5>
-                         <a class="btn btn-link text-white-50" href="">Asosiy</a>
-                         <a class="btn btn-link text-white-50" href="#haqida">LOYIHA HAQIDA</a>
-                         <a class="btn btn-link text-white-50" href="#paket">ISH PAKETLARI</a>
-                         <a class="btn btn-link text-white-50" href="#hamkor">HAMKORLIKLAR</a>
+                        <h5 class="text-white mb-4">Быстрые ссылки</h5>
+                        <a class="btn btn-link text-white-50" href="#haqida">Главная
+</a>
+                        <a class="btn btn-link text-white-50" href="#haqida">Loyiha haqida</a>
+                        <a class="btn btn-link text-white-50" href="#paket">Ishchi paket</a>
+                        <a class="btn btn-link text-white-50" href="#hamkor">HAMKORLAR</a>
+                        
                     </div>
                    
                     
@@ -889,21 +714,19 @@
             <!--    </div>-->
             <!--</div>-->
         </div>        <!-- Footer End -->
-
-
-        <!-- Back to Top -->
-        <a href="#s" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+<div>
+        </div>
+        <!-- Footer End -->
     </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://inmacom.samdu.uz/ru/lib/wow/wow.min.js"></script>
-    <script src="https://inmacom.samdu.uz/ru/lib/easing/easing.min.js"></script>
-    <script src="https://inmacom.samdu.uz/ru/lib/waypoints/waypoints.min.js"></script>
-    <script src="https://inmacom.samdu.uz/ru/lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- Template Javascript -->
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://inmacom.samdu.uz/ru/lib/wow/wow.min.js"></script>
+    <script src="https://inmacom.samdu.uz/ru/lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="https://inmacom.samdu.uz/ru/js/main.js"></script>
 </body>
 

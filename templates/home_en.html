@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-{% load static %}
+<html lang="uz">
+
 <head>
     <meta charset="utf-8">
-    <title>Inmacom</title>
+    <title>QUARTZ</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="И ОПТИЧЕСКОЙ СВЯЗИ ДЛЯ ОБЕСПЕЧЕНИЯ ПОТРЕБНОСТЕЙ РЫНКА ТРУДА В СФЕРЕ ТЕЛЕКОММУНИКАЦИЙ В УЗБЕКИСТАНЕ» — INMACOM" name="description">
+    <meta content="ЎЗБЕКИСТОНДА ТЕЛЕКОММУНИКАЦИЯ СОҲАСИДА ИШ ЎРИНЛАРИ ТАЛАБИГА ЖАВОБ БЕРИШ УЧУН ФОТОНИКА ВА ОПТИКАЛИК БАҒЛАНИШ БОЙИЧА ИШЛАНМА" name="description">
 
     <!-- Favicon -->
-{#    <link href="{% static 'img/favicon.ico' %}" rel="icon">#}
+    <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,456 +27,454 @@
     <link href="https://inmacom.samdu.uz/ru/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-{#     <link rel="stylesheet" href="{% static 'style.css' %}">#}
-    <style>
-        /********** Template CSS **********/
-:root {
-    --primary: #00B98E;
-    --secondary: #FF6922;
-    --light: #EFFDF5;
-    --dark: #0E2E50;
-}
-
-.back-to-top {
-    position: fixed;
-    display: none;
-    right: 45px;
-    bottom: 45px;
-    z-index: 99;
-}
-
-
-/*** Spinner ***/
-#spinner {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
-    z-index: 99999;
-}
-
-#spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
-    visibility: visible;
-    opacity: 1;
-}
-
-
-/*** Button ***/
-.btn {
-    transition: .5s;
-}
-
-.btn.btn-primary,
-.btn.btn-secondary {
-    color: #FFFFFF;
-}
-
-.btn-square {
-    width: 38px;
-    height: 38px;
-}
-
-.btn-sm-square {
-    width: 32px;
-    height: 32px;
-}
-
-.btn-lg-square {
-    width: 48px;
-    height: 48px;
-}
-
-.btn-square,
-.btn-sm-square,
-.btn-lg-square {
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: normal;
-    border-radius: 50px;
-}
-
-
-/*** Navbar ***/
-.nav-bar {
-    position: relative;
-    margin-top: 45px;
-    padding: 0 3rem;
-    transition: .5s;
-    z-index: 9999;
-}
-
-.nav-bar.sticky-top {
-    position: sticky;
-    padding: 0;
-    z-index: 9999;
-}
-
-.navbar {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-}
-
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 5px;
-    transition: .5s;
-}
-
-.navbar .dropdown-toggle[aria-expanded=true]::after {
-    transform: rotate(-180deg);
-}
-
-.navbar-light .navbar-nav .nav-link {
-    margin-right: 15px;
-    padding: 25px 0;
-    color: #FFFFFF;
-    font-size: 15px;
-    text-transform: uppercase;
-    outline: none;
-}
-
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary);
-}
-
-@media (max-width: 991.98px) {
-    .nav-bar {
-        margin: 0;
-        padding: 0;
-    }
-
-    .navbar-light .navbar-nav .nav-link  {
-        margin-right: 0;
-        padding: 10px 0;
-    }
-
-    .navbar-light .navbar-nav {
-        border-top: 1px solid #EEEEEE;
-    }
-}
-
-.navbar-light .navbar-brand {
-    height: 75px;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: var(--dark);
-    font-weight: 500;
-}
-
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        top: 100%;
-        margin-top: 0;
-        transform: rotateX(-75deg);
-        transform-origin: 0% 0%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
+     <link rel="stylesheet" href="style.css">
+     <style>/********** Template CSS **********/
+        :root {
+            --primary: #00B98E;
+            --secondary: #FF6922;
+            --light: #EFFDF5;
+            --dark: #0E2E50;
+        }
         
-    }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        transform: rotateX(0deg);
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
-    }
-}
-
-
-/*** Header ***/
-@media (min-width: 992px) {
-    .header {
-        margin-top: -120px;
-    }
-}
-
-.header-carousel .owl-nav {
-    position: absolute;
-    top: 50%;
-    left: -25px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-}
-
-.header-carousel .owl-nav .owl-prev,
-.header-carousel .owl-nav .owl-next {
-    margin: 7px 0;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    background: var(--primary);
-    border-radius: 40px;
-    font-size: 20px;
-    transition: .5s;
-}
-
-.header-carousel .owl-nav .owl-prev:hover,
-.header-carousel .owl-nav .owl-next:hover {
-    background: var(--dark);
-}
-
-@media (max-width: 768px) {
-    .header-carousel .owl-nav {
-        left: 25px;
-    }
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-    color: #DDDDDD;
-}
-
-
-/*** Icon ***/
-.icon {
-    padding: 15px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #FFFFFF !important;
-    border-radius: 50px;
-    border: 1px dashed var(--primary) !important;
-}
-
-
-/*** About ***/
-.about-img img {
-    position: relative;
-    z-index: 2;
-}
-
-.about-img::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    background: var(--primary);
-    transform: skew(20deg);
-    z-index: 1;
-}
-
-
-/*** Category ***/
-.cat-item div {
-    background: #FFFFFF;
-    border: 1px dashed rgba(0, 185, 142, .3);
-    transition: .5s;
-}
-
-.cat-item:hover div {
-    background: var(--primary);
-    border-color: transparent;
-}
-
-.cat-item div * {
-    transition: .5s;
-}
-
-.cat-item:hover div * {
-    color: #FFFFFF !important;
-}
-
-
-/*** Property List ***/
-.nav-pills .nav-item .btn {
-    color: var(--dark);
-}
-
-.nav-pills .nav-item .btn:hover,
-.nav-pills .nav-item .btn.active {
-    color: #FFFFFF;
-}
-
-.property-item {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-}
-
-.property-item img {
-    transition: .5s;
-}
-
-.property-item:hover img {
-    transform: scale(1.1);
-}
-
-.property-item .border-top {
-    border-top: 1px dashed rgba(0, 185, 142, .3) !important;
-}
-
-.property-item .border-end {
-    border-right: 1px dashed rgba(0, 185, 142, .3) !important;
-}
-
-
-/*** Team ***/
-.team-item {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-    transition: .5s;
-}
-
-.team-item .btn {
-    color: var(--primary);
-    background: #FFFFFF;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .15);
-}
-
-.team-item .btn:hover {
-    color: #FFFFFF;
-    background: var(--primary);
-}
-
-.team-item:hover {
-    border-color: var(--secondary) !important;
-}
-
-.team-item:hover .bg-primary {
-    background: var(--secondary) !important;
-}
-
-.team-item:hover .bg-primary i {
-    color: var(--secondary) !important;
-}
-
-
-/*** Testimonial ***/
-.testimonial-carousel {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-
-@media (min-width: 576px) {
-    .testimonial-carousel {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
-}
-
-.testimonial-carousel .testimonial-item .border {
-    border: 1px dashed rgba(0, 185, 142, .3) !important;
-}
-
-.testimonial-carousel .owl-nav {
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    top: calc(50% - 20px);
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    z-index: 1;
-}
-
-.testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    background: var(--primary);
-    border-radius: 40px;
-    font-size: 20px;
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-nav .owl-prev:hover,
-.testimonial-carousel .owl-nav .owl-next:hover {
-    background: var(--dark);
-}
-
-
-/*** Footer ***/
-.footer .btn.btn-social {
-    margin-right: 5px;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--light);
-    border: 1px solid rgba(255,255,255,0.5);
-    border-radius: 35px;
-    transition: .3s;
-}
-
-.footer .btn.btn-social:hover {
-    color: var(--primary);
-    border-color: var(--light);
-}
-
-.footer .btn.btn-link {
-    display: block;
-    margin-bottom: 5px;
-    padding: 0;
-    text-align: left;
-    font-size: 15px;
-    font-weight: normal;
-    text-transform: capitalize;
-    transition: .3s;
-}
-
-.footer .btn.btn-link::before {
-    position: relative;
-    content: "\f105";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 10px;
-}
-
-.footer .btn.btn-link:hover {
-    letter-spacing: 1px;
-    box-shadow: none;
-}
-
-.footer .form-control {
-    border-color: rgba(255,255,255,0.5);
-}
-
-.footer .copyright {
-    padding: 25px 0;
-    font-size: 15px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
-}
-
-.footer .copyright a {
-    color: var(--light);
-}
-
-.footer .footer-menu a {
-    margin-right: 15px;
-    padding-right: 15px;
-    border-right: 1px solid rgba(255, 255, 255, .1);
-}
-
-.footer .footer-menu a:last-child {
-    margin-right: 0;
-    padding-right: 0;
-    border-right: none;
-}
-.bg-primary, .owl-nav .owl-next,.bg-dark, .testimonial-carousel .owl-nav .owl-prev, .testimonial-carousel .owl-nav .owl-next, .about-img::before, .btn-primary, .header-carousel .owl-nav .owl-prev{
-    background-color: #0e1133 !important;
-     border: none !important;
-}
-.text-primary, .navbar-light .navbar-nav .nav-link:hover,.navbar-light .navbar-nav .nav-link.active{
-    color: #0e1133 !important;
-}
-    </style>
+        .back-to-top {
+            position: fixed;
+            display: none;
+            right: 45px;
+            bottom: 45px;
+            z-index: 99;
+        }
+        
+        
+        /*** Spinner ***/
+        #spinner {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .5s ease-out, visibility 0s linear .5s;
+            z-index: 99999;
+        }
+        
+        #spinner.show {
+            transition: opacity .5s ease-out, visibility 0s linear 0s;
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        
+        /*** Button ***/
+        .btn {
+            transition: .5s;
+        }
+        
+        .btn.btn-primary,
+        .btn.btn-secondary {
+            color: #FFFFFF;
+        }
+        
+        .btn-square {
+            width: 38px;
+            height: 38px;
+        }
+        
+        .btn-sm-square {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .btn-lg-square {
+            width: 48px;
+            height: 48px;
+        }
+        
+        .btn-square,
+        .btn-sm-square,
+        .btn-lg-square {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: normal;
+            border-radius: 50px;
+        }
+        
+        
+        /*** Navbar ***/
+        .nav-bar {
+            position: relative;
+            margin-top: 45px;
+            padding: 0 3rem;
+            transition: .5s;
+            z-index: 9999;
+        }
+        
+        .nav-bar.sticky-top {
+            position: sticky;
+            padding: 0;
+            z-index: 9999;
+        }
+        
+        .navbar {
+            box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+        }
+        
+        .navbar .dropdown-toggle::after {
+            border: none;
+            content: "\f107";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            vertical-align: middle;
+            margin-left: 5px;
+            transition: .5s;
+        }
+        
+        .navbar .dropdown-toggle[aria-expanded=true]::after {
+            transform: rotate(-180deg);
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            margin-right: 15px;
+            padding: 25px 0;
+            color: #FFFFFF;
+            font-size: 15px;
+            text-transform: uppercase;
+            outline: none;
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 991.98px) {
+            .nav-bar {
+                margin: 0;
+                padding: 0;
+            }
+        
+            .navbar-light .navbar-nav .nav-link  {
+                margin-right: 0;
+                padding: 10px 0;
+            }
+        
+            .navbar-light .navbar-nav {
+                border-top: 1px solid #EEEEEE;
+            }
+        }
+        
+        .navbar-light .navbar-brand {
+            height: 75px;
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        @media (min-width: 992px) {
+            .navbar .nav-item .dropdown-menu {
+                display: block;
+                top: 100%;
+                margin-top: 0;
+                transform: rotateX(-75deg);
+                transform-origin: 0% 0%;
+                opacity: 0;
+                visibility: hidden;
+                transition: .5s;
+                
+            }
+        
+            .navbar .nav-item:hover .dropdown-menu {
+                transform: rotateX(0deg);
+                visibility: visible;
+                transition: .5s;
+                opacity: 1;
+            }
+        }
+        
+        
+        /*** Header ***/
+        @media (min-width: 992px) {
+            .header {
+                margin-top: -120px;
+            }
+        }
+        
+        .header-carousel .owl-nav {
+            position: absolute;
+            top: 50%;
+            left: -25px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header-carousel .owl-nav .owl-prev,
+        .header-carousel .owl-nav .owl-next {
+            margin: 7px 0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            background: var(--primary);
+            border-radius: 40px;
+            font-size: 20px;
+            transition: .5s;
+        }
+        
+        .header-carousel .owl-nav .owl-prev:hover,
+        .header-carousel .owl-nav .owl-next:hover {
+            background: var(--dark);
+        }
+        
+        @media (max-width: 768px) {
+            .header-carousel .owl-nav {
+                left: 25px;
+            }
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: #DDDDDD;
+        }
+        
+        
+        /*** Icon ***/
+        .icon {
+            padding: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFFFFF !important;
+            border-radius: 50px;
+            border: 1px dashed var(--primary) !important;
+        }
+        
+        
+        /*** About ***/
+        .about-img img {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-img::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            transform: skew(20deg);
+            z-index: 1;
+        }
+        
+        
+        /*** Category ***/
+        .cat-item div {
+            background: #FFFFFF;
+            border: 1px dashed rgba(0, 185, 142, .3);
+            transition: .5s;
+        }
+        
+        .cat-item:hover div {
+            background: var(--primary);
+            border-color: transparent;
+        }
+        
+        .cat-item div * {
+            transition: .5s;
+        }
+        
+        .cat-item:hover div * {
+            color: #FFFFFF !important;
+        }
+        
+        
+        /*** Property List ***/
+        .nav-pills .nav-item .btn {
+            color: var(--dark);
+        }
+        
+        .nav-pills .nav-item .btn:hover,
+        .nav-pills .nav-item .btn.active {
+            color: #FFFFFF;
+        }
+        
+        .property-item {
+            box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+        }
+        
+        .property-item img {
+            transition: .5s;
+        }
+        
+        .property-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .property-item .border-top {
+            border-top: 1px dashed rgba(0, 185, 142, .3) !important;
+        }
+        
+        .property-item .border-end {
+            border-right: 1px dashed rgba(0, 185, 142, .3) !important;
+        }
+        
+        
+        /*** Team ***/
+        .team-item {
+            box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+            transition: .5s;
+        }
+        
+        .team-item .btn {
+            color: var(--primary);
+            background: #FFFFFF;
+            box-shadow: 0 0 30px rgba(0, 0, 0, .15);
+        }
+        
+        .team-item .btn:hover {
+            color: #FFFFFF;
+            background: var(--primary);
+        }
+        
+        .team-item:hover {
+            border-color: var(--secondary) !important;
+        }
+        
+        .team-item:hover .bg-primary {
+            background: var(--secondary) !important;
+        }
+        
+        .team-item:hover .bg-primary i {
+            color: var(--secondary) !important;
+        }
+        
+        
+        /*** Testimonial ***/
+        .testimonial-carousel {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        
+        @media (min-width: 576px) {
+            .testimonial-carousel {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
+        
+        .testimonial-carousel .testimonial-item .border {
+            border: 1px dashed rgba(0, 185, 142, .3) !important;
+        }
+        
+        .testimonial-carousel .owl-nav {
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            top: calc(50% - 20px);
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1;
+        }
+        
+        .testimonial-carousel .owl-nav .owl-prev,
+        .testimonial-carousel .owl-nav .owl-next {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            background: var(--primary);
+            border-radius: 40px;
+            font-size: 20px;
+            transition: .5s;
+        }
+        
+        .testimonial-carousel .owl-nav .owl-prev:hover,
+        .testimonial-carousel .owl-nav .owl-next:hover {
+            background: var(--dark);
+        }
+        
+        
+        /*** Footer ***/
+        .footer .btn.btn-social {
+            margin-right: 5px;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 35px;
+            transition: .3s;
+        }
+        
+        .footer .btn.btn-social:hover {
+            color: var(--primary);
+            border-color: var(--light);
+        }
+        
+        .footer .btn.btn-link {
+            display: block;
+            margin-bottom: 5px;
+            padding: 0;
+            text-align: left;
+            font-size: 15px;
+            font-weight: normal;
+            text-transform: capitalize;
+            transition: .3s;
+        }
+        
+        .footer .btn.btn-link::before {
+            position: relative;
+            content: "\f105";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 10px;
+        }
+        
+        .footer .btn.btn-link:hover {
+            letter-spacing: 1px;
+            box-shadow: none;
+        }
+        
+        .footer .form-control {
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .footer .copyright {
+            padding: 25px 0;
+            font-size: 15px;
+            border-top: 1px solid rgba(256, 256, 256, .1);
+        }
+        
+        .footer .copyright a {
+            color: var(--light);
+        }
+        
+        .footer .footer-menu a {
+            margin-right: 15px;
+            padding-right: 15px;
+            border-right: 1px solid rgba(255, 255, 255, .1);
+        }
+        
+        .footer .footer-menu a:last-child {
+            margin-right: 0;
+            padding-right: 0;
+            border-right: none;
+        }
+        .bg-primary, .owl-nav .owl-next,.bg-dark, .testimonial-carousel .owl-nav .owl-prev, .testimonial-carousel .owl-nav .owl-next, .about-img::before, .btn-primary, .header-carousel .owl-nav .owl-prev{
+            background-color: #0e1133 !important;
+             border: none !important;
+        }
+        .text-primary, .navbar-light .navbar-nav .nav-link:hover,.navbar-light .navbar-nav .nav-link.active{
+            color: #0e1133 !important;
+        }</style>
 </head>
 <body>
     <div class="container-xxl bg-white p-0">
@@ -489,16 +486,13 @@
         </div>
         <!-- Spinner End -->
 
-
         <!-- Navbar Start -->
                 <div class="container-fluid nav-bar bg-transparent">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-                <a href="{% url 'home_en' %}" class="navbar-brand d-flex align-items-center text-center">
+                <a href="#s" class="navbar-brand d-flex align-items-center text-center">
                                         <div class=" p-2 me-2">
-                        <img class="img-fluid" src="https://inmacom.uz/assets/img/logo.png" alt="Icon" style="width: 180px; height: 50px;">
-                        
+                        <img class="img-fluid" src="https://quartzuz.uz/templates/English/images/logo.png" alt="Icon" style="width: 180px; height: 50px;">
                     </div>
-                    <!-- <h1 class="m-0 text-primary">Maymunjon</h1> -->
                 </a>
                                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -506,36 +500,25 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a href="#s" class="nav-item nav-link active">Home</a>
-                        <a href="#haqida" class="nav-item nav-link">ABOUT THE PROJECT</a>
-                        <a href="#paket" class="nav-item nav-link">WORK PACKAGES</a>
-                        <a href="#hamkor" class="nav-item nav-link">PARTNERS</a>
-                        
-                        
+                        <a href="#haqida" class="nav-item nav-link">About</a>
+                        <a href="#hamkor" class="nav-item nav-link">Partners</a>
                         <a href="#footer" class="nav-item nav-link">Contact</a>
-              
                     </div>
-                   
                 </div>
-                
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">ENG</a>
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">EN</a>
                     <div class="dropdown-menu rounded-0 m-0">
+                        <a href="{% url 'home_ru' %}" class="dropdown-item">RU</a>
                         <a href="{% url 'home_uz' %}" class="dropdown-item">UZ</a>
-                        <a href="{% url 'home_en' %}" class="dropdown-item">EN</a>
-                        
                     </div>
-                </div>  
-                <a href="{% url 'home_ru' %}" class="navbar-brand d-flex align-items-center text-center">
+                </div>
+                <a href="{% url 'home_en' %}" class="navbar-brand d-flex align-items-center text-center">
                                         <div class=" p-2 me-2">
-                        <img class="img-fluid" src="https://inmacom.uz/assets/img/LogoErasmus_h.jpg" alt="Icon" style="width: 180px; height: 50px;">
-                        
+                        <img class="img-fluid" src="https://quartzuz.uz/templates/English/images/logo.png" alt="Icon" style="width: 180px; height: 50px;">
                     </div>
-                    <!-- <h1 class="m-0 text-primary">Maymunjon</h1> -->
                 </a>
-
             </nav>
         </div>        <!-- Navbar End -->
-
 
         <!-- Header Start -->
         <br>
@@ -549,130 +532,64 @@
         <div id="s" class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
-                    <h3 class="animated mb-4" style="text-align: center;">AND OPTICAL COMMUNICATIONS TO MEET THE NEEDS OF THE LABOR MARKET IN THE SPHERE OF TELECOMMUNICATIONS IN UZBEKISTAN" — INMACOM</h3>                    
-                    
+                    <h3 class="animated  mb-4" style="text-align: center;">The broader goal of the project is to develop synergetic connections between higher education institutions and the labor market in Uzbekistan.</h3>
                 </div>
                 <div class="col-md-6 animated fadeIn">
                     <div class="owl-carousel header-carousel">
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="https://i.ibb.co/rtxZz18/18.jpg"  alt="">
+                            <img class="img-fluid" src="https://quartzuz.uz/uploads/posts/2024-06/2.jpg"  alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="https://i.ibb.co/THXqNn0/photo-2024-09-05-10-41-46.jpg"  alt="">
+                            <img class="img-fluid" src="https://quartzuz.uz/uploads/posts/2024-06/medium/a6277b4891_image_2024-06-25_20-28-45.jpg"  alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="https://i.ibb.co/rtxZz18/18.jpg" alt="">
+                            <img class="img-fluid" src="https://quartzuz.uz/uploads/posts/2024-08/medium/12121212.jpg" alt="">
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
         <!-- Header End -->
 
-        
-
-        <!-- Search Start -->
-        <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
-            <div class="container">
-                <div class="row g-2">
-                   
-                </div>
-            </div>
-        </div>
-        <!-- Search End -->
-
-
-       
-
-
         <!-- About Start -->
         <div class="container-xxl py-5" id="haqida">
             <div class="container">
                 <div class="row g-5 align-items-center">
-                    
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                         <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                            <img class="img-fluid w-100" src="https://i.ibb.co/2gvhNNC/photo-2024-05-18-08-59-26.jpg" alt="ubtuit">
+                            <img class="img-fluid w-100" src="https://quartzuz.uz/uploads/posts/2024-08/medium/21212121.jpg">
                         </div>
                     </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="mb-4">ABOUT THE PROJECT</h1>
-                    <p >The INMACOM ERASMUS+ project is fully in line with the regional priorities set by CBHE and the national development strategy of Uzbekistan to develop a new, in-demand, innovative curriculum in photonics and optical communications. It also aims to expand cooperation with industry to improve the labor market and international cooperation.</p>
-                    
-                    <p class="mb-4"> The project aims to achieve the following specific objectives, which directly address the issues listed below: </p>
-                    <p><i class="fa fa-check text-primary me-3"></i> 1. Development of a new Master's program in photonics and optical communications in 4 universities of Uzbekistan; </p>
-                    <p><i class="fa fa-check text-primary me-3"></i> 2. Enhance the capacity of 4 universities in Uzbekistan to educate in photonics and optical communications;</p>
-                    <p><i class="fa fa-check text-primary me-3"></i> 3. Establish modern photonics and optical communications laboratories in 4 higher education institutions in Uzbekistan;</p>
-                    <p><i class="fa fa-check text-primary me-3"></i> 4. Start piloting and implementing joint modules/courses in the final year of the project;</p>
-                    <p><i class="fa fa-check text-primary me-3"></i> 5. Strengthen university-industry collaboration to meet labor market needs.</p>
-                
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <h1 class="mb-4">PROJECT GOAL</h1>
+                        <p> The broader goal of the project is to develop synergetic connections between higher education institutions and the labor market in Uzbekistan and to develop processes for ensuring quality. </p>
+                        <p class="mb-4">The project's objective is to ensure quality, increase digital literacy, and develop human resources skills.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i> 1. — Identifying the problems in the education system of Uzbekistan.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i> 2. — Equipping teachers and administrators with digital skills.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i> 3. — Developing necessary strategies for education and quality assurance.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i> 4. — Developing a system for university management and quality assurance.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i> 5. — Promoting cooperation and establishing a network.</p>
+                    </div>
                 </div>
-                <br>
-                <p>The broader goal of the project is to create an infrastructure and system for training the next generation of engineers in photonics and optical communications. These engineers can solve local and regional ICT problems of government agencies, industry and private consumers in Uzbekistan.</p>
-                </div>
-                <br>
-                 
             </div>
         </div>
         <!-- About End -->
 
 
-        <!-- Property List Start -->
-        <div class="container-xxl py-5" id="paket">
-            <div class="container">
-                <div class="row g-0 gx-5 align-items-end">
-                    <div class="col-lg-12">
-                        <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                            <h1 class="mb-3">WORK PACKAGES</h1>
-                        </div>
-                    </div>                     
-                </div>
-                <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
-                        <div class="row g-4">
-
-                            
-
-                            <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="property-item rounded overflow-hidden">
-                                    
-                                    <div class="p-4 pb-0">
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP1.</b> Project management. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP2.</b> Detailed study of available courses on specialized engineering programs at TATU, UzMU, SSU, OFTUIT and other technical universities of Uzbekistan. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP3.</b> IMPROVING PRODUCTIVITY. Intensive advanced training courses are planned for Uzbek teachers. The training courses are conducted in different ways. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP4.</b> Development of 8 new Master's and 4 technical elective courses (90 ECTS) and requirements for the Master's thesis. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP5.</b> Organization of photonics and optical communication laboratories at TATU, UzMU, SSU and UBTUIT. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP6.</b> USE. Recognition and accreditation of 8 new Master's courses. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP7.</b> Training courses for engineers of various specialties are organized in the established laboratories based on the current needs of the industry. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP8.</b> QUALITY CONTROL. A Quality Control Team (QCT) will be formed from academic staff of the partner universities to monitor the quality of teaching and course content. </p>
-                                        <p><i class="fa fa-check text-primary me-3"></i> <b>WP9.</b> Impact and dissemination. </p>
-                                    </div>
-                                    <br>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                   
-                </div>
-            </div>
-        </div>
         <!-- Property List End -->
 
         <div class="container-xxl py-5" id="hamkor">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">PARTNERS</h1>
-                     
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-
+        
                     <div class="testimonial-item bg-light rounded p-3">
                         <div class="bg-white border rounded p-4">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h1.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
+                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h1.jpg" style="width: 100px; height: 100px;">
                                 </div>
                                 <div class="col-md-9">
                                     <div class="">
@@ -682,231 +599,112 @@
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
-
+        
                     <div class="testimonial-item bg-light rounded p-3">
                         <div class="bg-white border rounded p-4">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h2.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
+                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h2.jpg" style="width: 100px; height: 100px;">
                                 </div>
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">GHENT UNIVERSITY</h6>
+                                            <h6 class="fw-bold mb-1">Ghent University</h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+        
                     <div class="testimonial-item bg-light rounded p-3">
                         <div class="bg-white border rounded p-4">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h3.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
+                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h6.jpg" style="width: 100px; height: 100px;">
                                 </div>
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">UNIVERSITY OF BRUSSELS VRIJE</h6>
+                                            <h6 class="fw-bold mb-1">The Regional Branch of Tashkent University of Information Technologies named after Muhammad al-Khwarizmi in Urgench</h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+        
                     <div class="testimonial-item bg-light rounded p-3">
                         <div class="bg-white border rounded p-4">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h4.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
+                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h9.jpg" style="width: 100px; height: 100px;">
                                 </div>
                                 <div class="col-md-9">
                                     <div class="">
                                         <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">POLYTECHNIC UNIVERSITY OF TURIN</h6>
+                                            <h6 class="fw-bold mb-1">Khorezm Branch of JSC "UZBEKTELECOM"</h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
-
-
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h5.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="">
-                                        <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">SAMARKAND STATE UNIVERSITY NAMED AFTER SHAROF RASHIDOV</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h6.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="">
-                                        <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">Urgench branch of the Tashkent University of Information Technologies named after Muhammad al-Khwarizmi</h6>                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h7.png" style="width: 100px; height: 100px;" alt="ubtuit">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="">
-                                        <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">MINISTRY OF HIGHER EDUCATION, SCIENCE AND INNOVATION OF THE REPUBLIC OF UZBEKISTAN</h6>                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h8.jpg" style="width: 100px; height: 100px;" alt="ubtuit">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="">
-                                        <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">WORLD OF SOLAR</h6>                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item bg-light rounded p-3">
-                        <div class="bg-white border rounded p-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h9.jpg"
-                                         style="width: 100px; height: 100px;" alt="ubtuit">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="">
-                                        <div class="ps-3">
-                                            <h6 class="fw-bold mb-1">Khorezm branch of UZBEKTELECOM JSC</h6>
-
-                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item bg-light rounded p-3"> 
-                        <div class="bg-white border rounded p-4">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img class="img-fluid flex-shrink-0 rounded" src="https://inmacom.samdu.uz/h10.png"
-                                     style="width: 100px; height: 100px;" alt="ubtuit">
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="">
-                                        <div class="ps-3">
-                                            <h6 class="fw-bold mb-1 ">MIRZO ULUGBEK NATIONAL UNIVERSITY OF UZBEKISTAN</h6>                                        
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                     
+        
                 </div>
             </div>
         </div>
-            
+        
 
         
         
 
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" id="footer">
-            <div class="container py-5" >
+            <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-4 col-md-6">
                         <h5 class="text-white mb-4">Contact</h5>
-                        <p class="mb-2">E-mail:            inmacomofficial@gmail.com</p>
-                        <p class="mb-2">Instagram:     inmacom.official@instagram</p>
-                        <p class="mb-2">Telegram:        https://t.me/inmacom</p>
-                        <p class="mb-2">Facebook:        inmacom.official@facebook</p>
-                         
+                        <p class="mb-2">E-mail:           info@kiut.uz</p>
+                        <p class="mb-2">Instagram:     quartzuz.official@instagram</p>
+                        <p class="mb-2">Telegram:        https://t.me/quartzuz</p>
+                        <p class="mb-2">Facebook:        quartzuz.official@facebook</p>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <h5 class="text-white mb-4">Quick links</h5>
+                        <h5 class="text-white mb-4">Quick Links</h5>
                         <a class="btn btn-link text-white-50" href="#haqida">Home</a>
-                        <a class="btn btn-link text-white-50" href="#haqida">ABOUT THE PROJECT</a>
-                        <a class="btn btn-link text-white-50" href="#paket">WORK PACKAGES</a>
-                        <a class="btn btn-link text-white-50" href="#hamkor">PARTNERS</a>                        
+                        <a class="btn btn-link text-white-50" href="#haqida">About the Project</a>
+                        <a class="btn btn-link text-white-50" href="#paket">Work Packages</a>
+                        <a class="btn btn-link text-white-50" href="#hamkor">Partners</a>
                     </div>
-                   
-                    
                 </div>
             </div>
             <!--<div class="container">-->
             <!--    <div class="copyright">-->
             <!--        <div class="row">-->
             <!--            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">-->
-            <!--                &copy; <a class="border-bottom" href="#">Samarqand 2023</a>, Sayt ishlab chiquvchi <a class="border-bottom" href="#">Qudratov Doniyor</a>-->
+            <!--                &copy; <a class="border-bottom" href="#">Samarkand 2023</a>, Website developer <a class="border-bottom" href="#">Qudratov Doniyor</a>-->
             <!--            </div>-->
-                         
             <!--        </div>-->
             <!--    </div>-->
             <!--</div>-->
-        </div>        <!-- Footer End -->
-
-
-        <!-- Back to Top -->
-        <a href="#s" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        </div>
+               <!-- Footer End -->
+<div>
+        </div>
+        <!-- Footer End -->
     </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://inmacom.samdu.uz/ru/lib/wow/wow.min.js"></script>
-    <script src="https://inmacom.samdu.uz/ru/lib/easing/easing.min.js"></script>
-    <script src="https://inmacom.samdu.uz/ru/lib/waypoints/waypoints.min.js"></script>
-    <script src="https://inmacom.samdu.uz/ru/lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- Template Javascript -->
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://inmacom.samdu.uz/ru/lib/wow/wow.min.js"></script>
+    <script src="https://inmacom.samdu.uz/ru/lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="https://inmacom.samdu.uz/ru/js/main.js"></script>
 </body>
 
